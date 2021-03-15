@@ -11,19 +11,14 @@
     "nx.json": "*"
   },
   "affected": {
-    "defaultBase": "master"
+    "defaultBase": "main"
   },
   "npmScope": "reactive-code-animations",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
         "accessToken": "YTkzZWIzNjMtNzI0ZC00ZjgxLWIxYTctNGVlZTI4Zjc2MGExfHJlYWQtd3JpdGU=",
         "canTrackAnalytics": false,
         "showUsageWarnings": true
@@ -36,9 +31,7 @@
     },
     "reactive-code-animations-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "reactive-code-animations"
-      ]
+      "implicitDependencies": ["reactive-code-animations"]
     }
   }
 }
