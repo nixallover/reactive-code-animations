@@ -2,9 +2,19 @@
   "name": "reactive-code-animations",
   "version": "0.0.0",
   "license": "MIT",
+  "contributors": [
+    {
+      "name": "Zack DeRose",
+      "email": "zack@nrwl.io"
+    },
+    {
+      "name": "Nicole Oliver",
+      "email": "nicole@nrwl.io"
+    }
+  ],
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port 4792",
     "build": "ng build",
     "test": "ng test",
     "lint": "./node_modules/.bin/nx lint && ng lint",
