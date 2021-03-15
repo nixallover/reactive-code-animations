@@ -1,18 +1,44 @@
 {
-  "npmScope": "reactive-code-animations",
   "implicitDependencies": {
     "angular.json": "*",
-    "package.json": "*",
-    "tsconfig.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.base.json": "*",
     "tslint.json": "*",
+    ".eslintrc.json": "*",
     "nx.json": "*"
+  },
+  "affected": {
+    "defaultBase": "master"
+  },
+  "npmScope": "reactive-code-animations",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ],
+        "accessToken": "YTkzZWIzNjMtNzI0ZC00ZjgxLWIxYTctNGVlZTI4Zjc2MGExfHJlYWQtd3JpdGU=",
+        "canTrackAnalytics": false,
+        "showUsageWarnings": true
+      }
+    }
   },
   "projects": {
     "reactive-code-animations": {
       "tags": []
     },
     "reactive-code-animations-e2e": {
-      "tags": []
+      "tags": [],
+      "implicitDependencies": [
+        "reactive-code-animations"
+      ]
     }
   }
 }
