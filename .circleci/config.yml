@@ -1,0 +1,85 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@3.0.0
+
+commands:
+  npm_install:
+    description: "Install & Cache Dependencies"
+    steps:
+      - run: npm install
+      - save_cache:
+          key: rca-{{ checksum "package-lock.json" }}
+          paths:
+            - ~/.cache
+            - node_modules
+
+  restore_npm_cache:
+    description: "Restore Cached Dependencies"
+    steps:
+      - restore_cache:
+          keys:
+            - rca-{{ checksum "package-lock.json" }}
+            - rca- # used if checksum fails
+
+  setup:
+    description: "Setup Executor"
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/project
+
+jobs:
+  initialize:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - restore_npm_cache
+      - npm_install
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - node_modules
+            - dist
+
+  lint:
+    executor:
+      name: node/default
+    steps:
+      - setup
+      - run:
+          name: Lint all affected projects
+          command: npx nx affected:lint --base=main --head=HEAD
+
+  build:
+    executor:
+      name: node/default
+    steps:
+      - setup
+      - run:
+          name: Build all affected projects
+          command: npx nx affected:build --base=main --head=HEAD
+
+  test:
+    executor:
+      name: node/default
+    steps:
+      - setup
+      - run:
+          name: Test all affected projects
+          command: npx nx affected:test --base=main --head=HEAD
+
+workflows:
+  verify:
+    jobs:
+      - initialize
+      - lint:
+          requires:
+            - initialize
+      - test:
+          requires:
+            - initialize
+      - build:
+          requires:
+            - initialize
