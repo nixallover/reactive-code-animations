@@ -63,12 +63,18 @@ p {
   margin-bottom: 1.5rem;
 }
 
+a {
+  color: $main-text;
+  text-decoration: $main-text underline 1px;
+  text-underline-offset: 2px;
+}
+
 small {
   font-size: 85%;
 }
 
 .button {
-  border: solid 2px $mint-dark;
+  border: 0;
   border-radius: 4px;
   background-color: $mint-dark;
   color: white;
