@@ -1,0 +1,142 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "",
+  "projects": {
+    "reactive-code-animations": {
+      "root": "apps/reactive-code-animations/",
+      "sourceRoot": "apps/reactive-code-animations/src",
+      "projectType": "application",
+      "prefix": "reactive-code-animations",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/reactive-code-animations",
+            "index": "apps/reactive-code-animations/src/index.html",
+            "main": "apps/reactive-code-animations/src/main.ts",
+            "polyfills": "apps/reactive-code-animations/src/polyfills.ts",
+            "tsConfig": "apps/reactive-code-animations/tsconfig.app.json",
+            "assets": [
+              "apps/reactive-code-animations/src/favicon.ico",
+              "apps/reactive-code-animations/src/assets"
+            ],
+            "styles": ["apps/reactive-code-animations/src/styles.scss"],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/reactive-code-animations/src/environments/environment.ts",
+                  "with": "apps/reactive-code-animations/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "reactive-code-animations:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "reactive-code-animations:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "reactive-code-animations:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/reactive-code-animations/tsconfig.app.json",
+              "apps/reactive-code-animations/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/reactive-code-animations/jest.config.js",
+            "tsConfig": "apps/reactive-code-animations/tsconfig.spec.json",
+            "setupFile": "apps/reactive-code-animations/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "reactive-code-animations-e2e": {
+      "root": "apps/reactive-code-animations-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/builders:cypress",
+          "options": {
+            "cypressConfig": "apps/reactive-code-animations-e2e/cypress.json",
+            "tsConfig": "apps/reactive-code-animations-e2e/tsconfig.e2e.json",
+            "devServerTarget": "reactive-code-animations:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "reactive-code-animations:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/reactive-code-animations-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false,
+      "versionMismatch": false
+    },
+    "defaultCollection": "@nrwl/schematics"
+  },
+  "schematics": {
+    "@nrwl/schematics:application": {
+      "style": "scss",
+      "framework": "angular"
+    },
+    "@nrwl/schematics:library": {
+      "style": "scss"
+    }
+  },
+  "defaultProject": "reactive-code-animations"
+}
