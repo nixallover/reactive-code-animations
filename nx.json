@@ -1,18 +1,13 @@
 {
   "implicitDependencies": {
     "angular.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
     "nx.json": "*"
   },
-  "affected": {
-    "defaultBase": "main"
-  },
+  "affected": { "defaultBase": "main" },
   "npmScope": "reactive-code-animations",
   "tasksRunnerOptions": {
     "default": {
@@ -26,12 +21,11 @@
     }
   },
   "projects": {
-    "reactive-code-animations": {
-      "tags": []
-    },
+    "reactive-code-animations": { "tags": [] },
     "reactive-code-animations-e2e": {
       "tags": [],
       "implicitDependencies": ["reactive-code-animations"]
-    }
+    },
+    "styles": { "tags": ["ui:styles"] }
   }
 }

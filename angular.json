@@ -52,6 +52,9 @@
               "apps/reactive-code-animations/src/assets"
             ],
             "styles": ["apps/reactive-code-animations/src/styles.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["libs/styles"]
+            },
             "scripts": []
           },
           "configurations": {
@@ -147,6 +150,12 @@
           }
         }
       }
+    },
+    "styles": {
+      "projectType": "library",
+      "root": "libs/styles",
+      "sourceRoot": "libs/styles/src",
+      "architect": {}
     }
   }
 }
