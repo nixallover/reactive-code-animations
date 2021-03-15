@@ -1,29 +1,19 @@
 {
   "implicitDependencies": {
     "angular.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
     "nx.json": "*"
   },
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "main" },
   "npmScope": "reactive-code-animations",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
         "accessToken": "YTkzZWIzNjMtNzI0ZC00ZjgxLWIxYTctNGVlZTI4Zjc2MGExfHJlYWQtd3JpdGU=",
         "canTrackAnalytics": false,
         "showUsageWarnings": true
@@ -31,14 +21,11 @@
     }
   },
   "projects": {
-    "reactive-code-animations": {
-      "tags": []
-    },
+    "reactive-code-animations": { "tags": [] },
     "reactive-code-animations-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "reactive-code-animations"
-      ]
-    }
+      "implicitDependencies": ["reactive-code-animations"]
+    },
+    "styles": { "tags": ["ui:styles"] }
   }
 }
