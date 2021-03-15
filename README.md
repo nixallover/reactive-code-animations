@@ -7,6 +7,15 @@ This project was generated using [Nx](https://nx.dev).
 
 🔎 **Nx is a set of Angular CLI power-ups for modern development.**
 
+## ☁ Nx Cloud
+
+### Computation Memoization in the Cloud
+
+<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
+
+Visit [Nx Cloud](https://nx.app/) to learn more.
+
+
 ## Quick Start
 To start the application, run `npm start` and visit http://localhost:4792/ in your browser.
 
