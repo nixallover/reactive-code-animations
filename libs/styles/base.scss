@@ -1,6 +1,7 @@
 @import 'variables';
 
-html, body {
+html,
+body {
   margin: 0;
 }
 
@@ -64,4 +65,32 @@ p {
 
 small {
   font-size: 85%;
+}
+
+.button {
+  border: solid 2px $mint-dark;
+  border-radius: 4px;
+  background-color: $mint-dark;
+  color: white;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  margin-right: 1rem;
+  padding: 0.75rem 1.5rem;
+  transition: background-color 0.2s;
+
+  &:not([disabled]) {
+    &:hover,
+    &:active {
+      background-color: $mint;
+    }
+  }
+
+  &[disabled] {
+    border-color: #aaa;
+    background-color: #aaa;
+    color: #777;
+    cursor: not-allowed;
+  }
 }

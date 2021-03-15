@@ -1,15 +1,31 @@
 :host {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
-.container {
-  border: dotted 1px red;
-  display: flex;
-  flex-direction: column;
-  max-width: 30rem;
+.illustration-layers {
+  position: relative;
+  width: 30rem;
 }
 
-img {
-  border: dotted 1px #ccc;
+.layer {
+  grid-area: 1 / 1 / 2 / 2;
+  justify-self: center;
+  position: absolute;
+
+  &.nx-cloud-layer {
+    top: 3rem;
+    left: 3rem;
+  }
+
+  &.nx-layer {
+    top: 10rem;
+    left: 3rem;
+  }
+
+  &.keyboard {
+    top: 17rem;
+    left: 1.9rem;
+  }
 }

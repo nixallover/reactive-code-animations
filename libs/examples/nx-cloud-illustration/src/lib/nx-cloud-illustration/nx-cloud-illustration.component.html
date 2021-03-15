@@ -1,6 +1,18 @@
-<div class="container">
-  <img src="assets/illustration1-code.svg" />
-  <img src="assets/illustration1-nx-cloud-layer.svg" />
-  <img src="assets/illustration1-nx-layer.svg" />
-  <img src="assets/illustration1-keyboard.svg" />
+<div class="controls">
+  <button
+    (click)="illustrationIsVisible = !illustrationIsVisible"
+    type="button"
+    class="button"
+  >
+    Toggle
+  </button>
+</div>
+<div class="illustration-layers">
+  <div *ngIf="illustrationIsVisible" [@dropInAnimation]="imageKeys.length">
+    <img
+      *ngFor="let key of imageKeys"
+      class="layer {{ key }}"
+      src="assets/illustration1-{{ key }}.svg"
+    />
+  </div>
 </div>

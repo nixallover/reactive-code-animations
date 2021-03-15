@@ -8,9 +8,8 @@ describe('NxCloudIllustrationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NxCloudIllustrationComponent ]
-    })
-    .compileComponents();
+      declarations: [NxCloudIllustrationComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
