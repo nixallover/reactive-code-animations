@@ -1,0 +1,21 @@
+@import 'variables';
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
+main {
+  border: dotted 1px #ccc;
+  padding: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  min-height: 30rem;
+}
+
+h1 {
+  padding: 0 3rem 1rem 0;
+  margin-left: 2rem;
+  border-bottom: dotted 4px $mint;
+}

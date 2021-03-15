@@ -1,10 +1,16 @@
+@import 'variables';
+
+html, body {
+  margin: 0;
+}
+
 html {
-  background-color: #efefef;
+  background-color: $main-background;
   box-sizing: border-box;
   font-size: 16px;
   font-family: 'Recursive', sans-serif;
   font-weight: 300;
-  color: #333;
+  color: $main-text;
 }
 
 *,
