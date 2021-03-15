@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  border: dotted 1px red;
+  display: flex;
+  flex-direction: column;
+  max-width: 30rem;
+}
+
+img {
+  border: dotted 1px #ccc;
+}

@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@rca/styles": ["libs/styles/src/index.ts"]
+      "@rca/styles": ["libs/styles/src/index.ts"],
+      "@rca/examples/nx-cloud-illustration": [
+        "libs/examples/nx-cloud-illustration/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

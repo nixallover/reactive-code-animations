@@ -26,6 +26,7 @@
       "tags": [],
       "implicitDependencies": ["reactive-code-animations"]
     },
-    "styles": { "tags": ["ui:styles"] }
+    "styles": { "tags": ["type:ui"] },
+    "examples-nx-cloud-illustration": { "tags": ["type:feature"] }
   }
 }
