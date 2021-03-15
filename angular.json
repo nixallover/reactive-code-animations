@@ -36,7 +36,7 @@
       "projectType": "application",
       "root": "apps/reactive-code-animations",
       "sourceRoot": "apps/reactive-code-animations/src",
-      "prefix": "reactive-code-animations",
+      "prefix": "rca",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
