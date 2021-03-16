@@ -2,8 +2,24 @@
 
 header {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
   margin-bottom: 2rem;
+}
+
+.menu-button {
+  background-color: $main-text;
+}
+
+nav {
+  margin: 2rem;
+  margin-top: 0;
+
+  a {
+    display: inline-block;
+    text-underline-offset: 3px;
+    margin: 0 1rem 1rem 0;
+  }
 }
 
 main {
