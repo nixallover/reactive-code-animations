@@ -1,7 +1,8 @@
 {
   "version": 1,
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nrwl/angular",
+    "analytics": "fe575fcd-3803-43fc-8564-3c5a17d48e1b"
   },
   "defaultProject": "reactive-code-animations",
   "schematics": {
@@ -120,6 +121,10 @@
             "jestConfig": "apps/reactive-code-animations/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     },

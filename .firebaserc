@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "reactive-code-and-animations": {
+      "hosting": {
+        "reactive-code-animations": [
+          "reactive-code-and-animations"
+        ]
+      }
+    }
+  }
+}
