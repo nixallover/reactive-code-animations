@@ -9,9 +9,6 @@ import { map } from 'rxjs/operators';
 import { CarouselItemComponent } from '../carousel-item/carousel-item.component';
 
 let _id = 0;
-
-// https://github.com/nrwl/ocean/blob/ff9b3990bf8f1eb3939effdd87812a661c879291/libs/nx-cloud/feature-landing/src/lib/landing-features/landing-features.component.ts
-
 @Component({
   selector: 'rca-carousel',
   templateUrl: './carousel.component.html',
