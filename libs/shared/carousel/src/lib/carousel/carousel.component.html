@@ -1,0 +1,18 @@
+<div class="carousel-control-container">
+  <div class="carousel-control" role="group" [attr.aria-controls]="carouselId">
+    <button
+      *ngFor="let i of itemIndices"
+      (click)="showItem(i)"
+      [disabled]="isActiveItem$(i) | async"
+    ></button>
+  </div>
+</div>
+
+<div
+  role="region"
+  [attr.id]="carouselId"
+  aria-live="polite"
+  class="item-container"
+>
+  <ng-content></ng-content>
+</div>

@@ -211,6 +211,56 @@
           }
         }
       }
+    },
+    "examples-carousel": {
+      "projectType": "library",
+      "root": "libs/examples/carousel",
+      "sourceRoot": "libs/examples/carousel/src",
+      "prefix": "rca",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/examples/carousel/src/**/*.ts",
+              "libs/examples/carousel/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/examples/carousel"],
+          "options": {
+            "jestConfig": "libs/examples/carousel/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-carousel": {
+      "projectType": "library",
+      "root": "libs/shared/carousel",
+      "sourceRoot": "libs/shared/carousel/src",
+      "prefix": "rca",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/carousel/src/**/*.ts",
+              "libs/shared/carousel/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/carousel"],
+          "options": {
+            "jestConfig": "libs/shared/carousel/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

@@ -1,0 +1,7 @@
+<div *ngIf="itemIsVisible" [@fadeFromBack] class="item-text">
+  <ng-content select=".carousel-item-title"></ng-content>
+  <ng-content select=".carousel-item-description"></ng-content>
+</div>
+<div *ngIf="itemIsVisible" [@fadeFromBack2] class="item-images">
+  <ng-content select=".carousel-item-images"></ng-content>
+</div>
