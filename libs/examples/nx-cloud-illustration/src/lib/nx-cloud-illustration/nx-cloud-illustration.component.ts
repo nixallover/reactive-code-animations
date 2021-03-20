@@ -7,7 +7,7 @@ import {
   useAnimation,
 } from '@angular/animations';
 import { Component } from '@angular/core';
-import { dropInAnimation, dropOutAnimation } from './drop.animation';
+import { dropInAnimation, dropOutAnimation } from '@rca/shared/animations';
 
 @Component({
   selector: 'rca-nx-cloud-illustration',
