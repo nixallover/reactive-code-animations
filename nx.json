@@ -29,6 +29,7 @@
     "styles": { "tags": ["type:ui"] },
     "examples-nx-cloud-illustration": { "tags": ["type:feature"] },
     "shared-animations": { "tags": ["type:util"] },
-    "examples-carousel": { "tags": ["type:feature"] }
+    "examples-carousel": { "tags": ["type:feature"] },
+    "shared-carousel": { "tags": ["type:ui"] }
   }
 }

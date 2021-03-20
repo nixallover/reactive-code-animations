@@ -236,6 +236,31 @@
           }
         }
       }
+    },
+    "shared-carousel": {
+      "projectType": "library",
+      "root": "libs/shared/carousel",
+      "sourceRoot": "libs/shared/carousel/src",
+      "prefix": "rca",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/carousel/src/**/*.ts",
+              "libs/shared/carousel/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/carousel"],
+          "options": {
+            "jestConfig": "libs/shared/carousel/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
