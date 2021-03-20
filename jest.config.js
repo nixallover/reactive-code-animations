@@ -4,5 +4,6 @@ module.exports = {
     '<rootDir>/libs/styles',
     '<rootDir>/libs/examples/nx-cloud-illustration',
     '<rootDir>/libs/shared/animations',
+    '<rootDir>/libs/examples/carousel',
   ],
 };

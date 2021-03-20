@@ -21,6 +21,9 @@
       ],
       "@rca/shared/animations": [
         "libs/shared/animations/src/index.ts"
+      ],
+      "@rca/examples/carousel": [
+        "libs/examples/carousel/src/index.ts"
       ]
     }
   },
