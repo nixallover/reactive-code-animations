@@ -186,6 +186,31 @@
           }
         }
       }
+    },
+    "shared-animations": {
+      "projectType": "library",
+      "root": "libs/shared/animations",
+      "sourceRoot": "libs/shared/animations/src",
+      "prefix": "reactive-code-animations",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/animations/src/**/*.ts",
+              "libs/shared/animations/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/animations"],
+          "options": {
+            "jestConfig": "libs/shared/animations/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

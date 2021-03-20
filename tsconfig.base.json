@@ -18,6 +18,9 @@
       "@rca/styles": ["libs/styles/src/index.ts"],
       "@rca/examples/nx-cloud-illustration": [
         "libs/examples/nx-cloud-illustration/src/index.ts"
+      ],
+      "@rca/shared/animations": [
+        "libs/shared/animations/src/index.ts"
       ]
     }
   },
