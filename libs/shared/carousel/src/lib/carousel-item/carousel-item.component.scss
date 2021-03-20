@@ -1,0 +1,10 @@
+:host {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  max-width: 100%;
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+  }
+}

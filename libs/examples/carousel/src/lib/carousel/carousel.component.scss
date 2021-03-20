@@ -1,6 +1,27 @@
+@import 'variables';
+
 :host {
-  border: dotted 1px;
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+.carousel-item-images {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-placeholder {
+  background-color: $mint;
+  border-radius: 50%;
+  display: block;
+  height: 15rem;
+  width: 15rem;
+
+  &:nth-child(2) {
+    height: 20rem;
+    width: 20rem;
+    margin-right: 10rem;
+  }
 }
