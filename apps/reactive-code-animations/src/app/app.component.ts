@@ -11,7 +11,7 @@ interface MenuItem {
 })
 export class AppComponent {
   menuItems: MenuItem[] = [
+    { name: 'Carousel', path: '/examples/carousel' },
     { name: 'Nx Cloud Illustration', path: '/examples/nx-cloud-illustration' },
-    // more examples to come :)
   ];
 }

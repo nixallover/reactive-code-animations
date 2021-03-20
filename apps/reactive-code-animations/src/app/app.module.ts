@@ -15,8 +15,15 @@ const APP_ROUTES = [
       ).then((m) => m.ExamplesNxCloudIllustrationModule),
   },
   {
+    path: 'examples/carousel',
+    loadChildren: () =>
+      import('libs/examples/carousel/src/lib/examples-carousel.module').then(
+        (m) => m.ExamplesCarouselModule
+      ),
+  },
+  {
     path: '**',
-    redirectTo: '/examples/nx-cloud-illustration',
+    redirectTo: '/examples/carousel',
     pathMatch: 'full',
   },
 ];
