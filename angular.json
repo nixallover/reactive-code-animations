@@ -261,6 +261,31 @@
           }
         }
       }
+    },
+    "examples-click-counter": {
+      "projectType": "library",
+      "root": "libs/examples/click-counter",
+      "sourceRoot": "libs/examples/click-counter/src",
+      "prefix": "reactive-code-animations",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/examples/click-counter/src/**/*.ts",
+              "libs/examples/click-counter/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/examples/click-counter"],
+          "options": {
+            "jestConfig": "libs/examples/click-counter/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

@@ -22,6 +22,13 @@ const APP_ROUTES = [
       ),
   },
   {
+    path: 'examples/click-counter',
+    loadChildren: () =>
+      import(
+        'libs/examples/click-counter/src/lib/examples-click-counter.module'
+      ).then((m) => m.ExamplesClickCounterModule),
+  },
+  {
     path: '**',
     redirectTo: '/examples/carousel',
     pathMatch: 'full',

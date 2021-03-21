@@ -30,6 +30,7 @@
     "examples-nx-cloud-illustration": { "tags": ["type:feature"] },
     "shared-animations": { "tags": ["type:util"] },
     "examples-carousel": { "tags": ["type:feature"] },
-    "shared-carousel": { "tags": ["type:ui"] }
+    "shared-carousel": { "tags": ["type:ui"] },
+    "examples-click-counter": { "tags": [] }
   }
 }
