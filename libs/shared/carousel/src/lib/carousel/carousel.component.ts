@@ -1,12 +1,10 @@
+import { Component } from '@angular/core';
 import {
-  AfterViewInit,
-  Component,
-  ContentChildren,
-  QueryList,
-} from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { CarouselItemComponent } from '../carousel-item/carousel-item.component';
+  activeCarouselState,
+  CarouselState,
+  CAROUSEL_STATES,
+  createReactiveCarouselMachine,
+} from './carousel.utils';
 
 let _id = 0;
 @Component({
@@ -14,28 +12,13 @@ let _id = 0;
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss'],
 })
-export class CarouselComponent implements AfterViewInit {
-  @ContentChildren(CarouselItemComponent)
-  items!: QueryList<CarouselItemComponent>;
+export class CarouselComponent {
   carouselId = `rca-carousel-${_id++}`;
+  states = CAROUSEL_STATES;
+  private _reactiveMachine = createReactiveCarouselMachine();
+  activeState$ = activeCarouselState(this._reactiveMachine.params);
 
-  activeItem$ = new BehaviorSubject<number>(0);
-
-  itemIndices = [0, 1, 2];
-  itemCount = this.itemIndices.length;
-
-  ngAfterViewInit() {
-    this.showItem(0);
-  }
-
-  isActiveItem$(index: number) {
-    return this.activeItem$.pipe(map((activeIndex) => activeIndex === index));
-  }
-
-  showItem(index: number): void {
-    this.activeItem$.next(index);
-    this.items.forEach((el, i) => {
-      el.updateVisibility(i === index);
-    });
+  userClick(state: CarouselState) {
+    this._reactiveMachine.observers[state].next();
   }
 }

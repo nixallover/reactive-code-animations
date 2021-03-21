@@ -1,5 +1,8 @@
-<rca-carousel>
-  <rca-carousel-item>
+<rca-carousel #carousel>
+  <rca-carousel-item
+    state="first"
+    [activeState]="carousel.activeState$ | async"
+  >
     <h2 class="carousel-item-title">Here's a fun title</h2>
     <p class="carousel-item-description">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sequi ad,
@@ -13,7 +16,10 @@
     </div>
   </rca-carousel-item>
 
-  <rca-carousel-item>
+  <rca-carousel-item
+    state="second"
+    [activeState]="carousel.activeState$ | async"
+  >
     <h2 class="carousel-item-title">And another</h2>
     <p class="carousel-item-description">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque corrupti
@@ -26,7 +32,10 @@
     </div>
   </rca-carousel-item>
 
-  <rca-carousel-item>
+  <rca-carousel-item
+    state="third"
+    [activeState]="carousel.activeState$ | async"
+  >
     <h2 class="carousel-item-title">One more for good measure</h2>
     <p class="carousel-item-description">
       Lorem, ipsum dolor sit amet consectetur adipisicing elit.
