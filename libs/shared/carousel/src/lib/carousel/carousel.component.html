@@ -1,18 +1,24 @@
-<div class="carousel-control-container">
-  <div class="carousel-control" role="group" [attr.aria-controls]="carouselId">
-    <button
-      *ngFor="let i of itemIndices"
-      (click)="showItem(i)"
-      [disabled]="isActiveItem$(i) | async"
-    ></button>
+<ng-container *ngIf="activeState$ | async as activeState">
+  <div class="carousel-control-container">
+    <div
+      class="carousel-control"
+      role="group"
+      [attr.aria-controls]="carouselId"
+    >
+      <button
+        *ngFor="let state of states"
+        (click)="userClick(state)"
+        [disabled]="state === activeState"
+      ></button>
+    </div>
   </div>
-</div>
 
-<div
-  role="region"
-  [attr.id]="carouselId"
-  aria-live="polite"
-  class="item-container"
->
-  <ng-content></ng-content>
-</div>
+  <div
+    role="region"
+    [attr.id]="carouselId"
+    aria-live="polite"
+    class="item-container"
+  >
+    <ng-content></ng-content>
+  </div>
+</ng-container>
