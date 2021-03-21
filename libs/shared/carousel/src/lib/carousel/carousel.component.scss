@@ -14,7 +14,8 @@
   display: flex;
   justify-content: space-between;
   max-width: 40rem;
-  width: 20rem;
+  margin-bottom: 2rem;
+  width: 10rem;
 
   @media (max-width: 500px) {
     width: 100%;
