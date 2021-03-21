@@ -7,5 +7,6 @@ module.exports = {
     '<rootDir>/libs/examples/carousel',
     '<rootDir>/libs/shared/carousel',
     '<rootDir>/libs/examples/click-counter',
+    '<rootDir>/libs/examples/series',
   ],
 };

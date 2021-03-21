@@ -23,7 +23,9 @@
       "@rca/examples/carousel": ["libs/examples/carousel/src/index.ts"],
       "@rca/shared/carousel": ["libs/shared/carousel/src/index.ts"],
       "@reactive-code-animations/examples/click-counter": [
-        "libs/examples/click-counter/src/index.ts"
+        "libs/examples/click-counter/src/index.ts"],
+      "@rca/examples/series": [
+        "libs/examples/series/src/index.ts"
       ]
     }
   },

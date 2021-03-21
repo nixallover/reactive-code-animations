@@ -1,0 +1,16 @@
+<ng-container *ngIf="items$ | async as items">
+  <div class="blocks" [@rotateInStaggeredAnimation]="items.length">
+    <div *ngFor="let item of items; trackBy: trackByFn" class="block">
+      {{ item }}
+    </div>
+  </div>
+</ng-container>
+
+<div class="load-more-control">
+  <div class="loading-animation">
+    <ng-container *ngIf="isLoading">
+      <div *ngFor="let dot of [1, 2, 3]" class="loading-dot"></div>
+    </ng-container>
+  </div>
+  <button (click)="loadMore()" type="button" class="button">Load more</button>
+</div>
