@@ -1,8 +1,9 @@
 :host {
   display: flex;
+  justify-content: center;
+  max-width: 100%;
   position: absolute;
   width: 100%;
-  max-width: 100%;
 
   @media (max-width: 960px) {
     flex-direction: column;

@@ -1,7 +1,11 @@
-<div *ngIf="activeState === state" [@fadeFromBack] class="item-text">
-  <ng-content select=".carousel-item-title"></ng-content>
-  <ng-content select=".carousel-item-description"></ng-content>
+<div *ngIf="activeState === state" [@fadeToCenter1]>
+  <ng-content select=".image-1"></ng-content>
 </div>
-<div *ngIf="activeState === state" [@fadeFromBack2] class="item-images">
-  <ng-content select=".carousel-item-images"></ng-content>
+
+<div *ngIf="activeState === state" [@fadeToCenter2]>
+  <ng-content select=".image-2"></ng-content>
+</div>
+
+<div *ngIf="activeState === state" [@fadeToCenter3]>
+  <ng-content select=".image-3"></ng-content>
 </div>
