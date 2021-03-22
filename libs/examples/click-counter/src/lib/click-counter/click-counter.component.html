@@ -1,0 +1,8 @@
+<button #button>Click Me!</button>
+<div>Clicks in Last Second: {{ lastSecondCounter$ | async }}</div>
+<div>Clicks in Last 5 Seconds: {{ lastFiveSecondsCounter$ | async }}</div>
+<div>Clicks in Last 15 Seconds: {{ lastFifteenSecondsCounter$ | async }}</div>
+<div>Total Count: {{ clickCounter$ | async }}</div>
+<reactive-code-animations-line-chart
+  [data]="chartData$ | async"
+></reactive-code-animations-line-chart>
