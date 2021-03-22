@@ -1,4 +1,4 @@
-import { combineLatest, merge, Observable } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 import { map, scan, startWith, tap } from 'rxjs/operators';
 
 export interface CreateChartDataParams {

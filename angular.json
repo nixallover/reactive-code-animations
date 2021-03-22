@@ -286,6 +286,31 @@
           }
         }
       }
+    },
+    "examples-series": {
+      "projectType": "library",
+      "root": "libs/examples/series",
+      "sourceRoot": "libs/examples/series/src",
+      "prefix": "reactive-code-animations",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/examples/series/src/**/*.ts",
+              "libs/examples/series/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/examples/series"],
+          "options": {
+            "jestConfig": "libs/examples/series/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

@@ -1,15 +1,6 @@
 import { transition, trigger, useAnimation } from '@angular/animations';
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  Input,
-  OnChanges,
-  SimpleChanges,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { dropInAnimation, fadeOutAnimation } from '@rca/shared/animations';
-import { Observable, Observer } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { CarouselState } from '../carousel/carousel.utils';
 
 @Component({

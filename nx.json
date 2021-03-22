@@ -31,6 +31,7 @@
     "shared-animations": { "tags": ["type:util"] },
     "examples-carousel": { "tags": ["type:feature"] },
     "shared-carousel": { "tags": ["type:ui"] },
-    "examples-click-counter": { "tags": [] }
+    "examples-click-counter": { "tags": ["type:feature"] },
+    "examples-series": { "tags": ["type:feature"] }
   }
 }

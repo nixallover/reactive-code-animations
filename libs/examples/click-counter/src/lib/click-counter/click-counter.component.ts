@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { fromEvent, Observable, Observer } from 'rxjs';
+import { fromEvent, Observable } from 'rxjs';
 import { scan, startWith } from 'rxjs/operators';
 import { ChartData, createChartData } from '../chart-data.function';
 import { windowedCount } from '../windowed-count.function';
@@ -28,8 +28,6 @@ export class ClickCounterComponent implements OnInit {
   lastFiveSecondsCounter$: Observable<number>;
   lastFifteenSecondsCounter$: Observable<number>;
   chartData$: Observable<ChartData>;
-
-  constructor() {}
 
   ngOnInit(): void {
     this._buttonClicks$ = createClickObservable(this.button);
