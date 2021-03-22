@@ -1,5 +1,13 @@
-import { merge, Observable, Observer } from 'rxjs';
-import { map, shareReplay, startWith } from 'rxjs/operators';
+import { interval, merge, Observable, Observer, of, timer } from 'rxjs';
+import {
+  debounce,
+  map,
+  scan,
+  shareReplay,
+  startWith,
+  switchMap,
+  take,
+} from 'rxjs/operators';
 
 export const CAROUSEL_STATES = ['first', 'second', 'third'] as const;
 
@@ -22,7 +30,7 @@ export function activeCarouselState({
     firstButtonClicks.pipe(map(() => 'first' as const)),
     secondButtonClicks.pipe(map(() => 'second' as const)),
     thirdButtonClicks.pipe(map(() => 'third' as const))
-  ).pipe(startWith(initialState), shareReplay(1));
+  ).pipe(startWith(initialState), autoAdvance(5000), shareReplay(1));
 }
 
 export function createReactiveCarouselMachine(
@@ -49,4 +57,29 @@ export function createReactiveCarouselMachine(
     initialState,
   };
   return { observers, params };
+}
+
+function nextState(state: CarouselState): CarouselState {
+  if (state === 'first') {
+    return 'second';
+  }
+  if (state === 'second') {
+    return 'third';
+  }
+  return 'first';
+}
+
+function autoAdvance(period: number) {
+  return function (
+    incoming: Observable<CarouselState>
+  ): Observable<CarouselState> {
+    return incoming.pipe(
+      switchMap((currentState) =>
+        merge(
+          of(currentState),
+          interval(period).pipe(scan((acc) => nextState(acc), currentState))
+        )
+      )
+    );
+  };
 }
