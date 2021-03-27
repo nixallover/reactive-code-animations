@@ -8,7 +8,7 @@ function createClickObservable(target: ElementRef): Observable<MouseEvent> {
   return fromEvent(target.nativeElement, 'click');
 }
 
-function count(incoming: Observable<any>): Observable<number> {
+function count<T>(incoming: Observable<T>): Observable<number> {
   return incoming.pipe(
     scan((acc) => acc + 1, 0),
     startWith(0)
