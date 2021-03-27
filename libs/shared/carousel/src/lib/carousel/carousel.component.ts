@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {
-  activeCarouselState,
   CarouselState,
   CAROUSEL_STATES,
   createReactiveCarouselMachine,
@@ -16,9 +15,9 @@ export class CarouselComponent {
   carouselId = `rca-carousel-${_id++}`;
   states = CAROUSEL_STATES;
   private _reactiveMachine = createReactiveCarouselMachine();
-  activeState$ = activeCarouselState(this._reactiveMachine.params);
+  activeState$ = this._reactiveMachine.activeState$;
 
   userClick(state: CarouselState) {
-    this._reactiveMachine.observers[state].next();
+    this._reactiveMachine.userInitiatedStateChange(state);
   }
 }
