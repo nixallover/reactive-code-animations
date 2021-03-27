@@ -1,8 +1,8 @@
 import { Observable, timer } from 'rxjs';
 import { mergeMap, take, map, scan, startWith } from 'rxjs/operators';
 
-export function windowedCount(windowLength: number) {
-  return function (incoming: Observable<any>): Observable<number> {
+export function windowedCount<T>(windowLength: number) {
+  return function (incoming: Observable<T>): Observable<number> {
     return incoming.pipe(
       mergeMap(() =>
         timer(0, windowLength).pipe(

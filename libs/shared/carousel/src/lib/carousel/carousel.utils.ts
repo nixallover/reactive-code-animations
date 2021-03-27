@@ -2,7 +2,7 @@ import { merge, Observable, Observer } from 'rxjs';
 import { map, shareReplay, startWith } from 'rxjs/operators';
 import { autoAdvance } from './auto-advance.operator';
 
-export const CAROUSEL_STATES = ['first', 'second', 'third'] as const;
+export const CAROUSEL_STATES = ['spongebob', 'patrick', 'gary'] as const;
 
 export type CarouselState = typeof CAROUSEL_STATES[number];
 
@@ -13,12 +13,12 @@ export interface ReactiveCarouselMachine {
 
 export function createReactiveCarouselMachine(
   timeToAutoAdvance: number = 5000,
-  initialState: CarouselState = 'first'
+  initialState: CarouselState = 'spongebob'
 ): ReactiveCarouselMachine {
   const observers: Record<CarouselState, Observer<void>> = {
-    first: null,
-    second: null,
-    third: null,
+    spongebob: null,
+    patrick: null,
+    gary: null,
   };
   const userInitiatedActions = CAROUSEL_STATES.reduce((acc, carouselState) => {
     acc[carouselState] = new Observable<void>((observer) => {
@@ -68,11 +68,11 @@ function activeCarouselState({
 }
 
 function nextState(state: CarouselState): CarouselState {
-  if (state === 'first') {
-    return 'second';
+  if (state === 'spongebob') {
+    return 'patrick';
   }
-  if (state === 'second') {
-    return 'third';
+  if (state === 'patrick') {
+    return 'gary';
   }
-  return 'first';
+  return 'spongebob';
 }
