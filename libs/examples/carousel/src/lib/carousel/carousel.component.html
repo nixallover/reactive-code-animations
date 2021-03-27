@@ -1,28 +1,25 @@
 <rca-carousel #carousel>
-  <rca-carousel-item
-    state="first"
-    [activeState]="carousel.activeState$ | async"
-  >
-    <img src="assets/spongebob/spongebob-01.png" class="image-1 size-sm" />
-    <img src="assets/spongebob/spongebob-02.png" class="image-2 size-xl m-md" />
-    <img src="assets/spongebob/spongebob-03.png" class="image-3 size-md m-sm" />
-  </rca-carousel-item>
-
-  <rca-carousel-item
-    state="second"
-    [activeState]="carousel.activeState$ | async"
-  >
-    <img src="assets/spongebob/patrick-03.png" class="image-1 size-md m-sm" />
-    <img src="assets/spongebob/patrick-02.png" class="image-2 size-lg m-lg" />
-    <img src="assets/spongebob/patrick-01.png" class="image-3 size-xl" />
-  </rca-carousel-item>
-
-  <rca-carousel-item
-    state="third"
-    [activeState]="carousel.activeState$ | async"
-  >
-    <img src="assets/spongebob/gary-01.png" class="image-1 size-xl m-md" />
-    <img src="assets/spongebob/gary-02.png" class="image-2 size-sm" />
-    <img src="assets/spongebob/gary-03.png" class="image-3 size-md m-md" />
-  </rca-carousel-item>
+  <ng-container *ngIf="carousel.activeState$ | async as activeState">
+    <rca-carousel-item state="first" [activeState]="activeState">
+      <img src="assets/spongebob/spongebob-01.png" class="image-1 size-sm" />
+      <img
+        src="assets/spongebob/spongebob-02.png"
+        class="image-2 size-xl m-md"
+      />
+      <img
+        src="assets/spongebob/spongebob-03.png"
+        class="image-3 size-md m-sm"
+      />
+    </rca-carousel-item>
+    <rca-carousel-item state="second" [activeState]="activeState">
+      <img src="assets/spongebob/patrick-03.png" class="image-1 size-md m-sm" />
+      <img src="assets/spongebob/patrick-02.png" class="image-2 size-lg m-lg" />
+      <img src="assets/spongebob/patrick-01.png" class="image-3 size-xl" />
+    </rca-carousel-item>
+    <rca-carousel-item state="third" [activeState]="activeState">
+      <img src="assets/spongebob/gary-01.png" class="image-1 size-xl m-md" />
+      <img src="assets/spongebob/gary-02.png" class="image-2 size-sm" />
+      <img src="assets/spongebob/gary-03.png" class="image-3 size-md m-md" />
+    </rca-carousel-item>
+  </ng-container>
 </rca-carousel>

@@ -1,62 +1,70 @@
-import { interval, merge, Observable, Observer, of, timer } from 'rxjs';
-import {
-  debounce,
-  map,
-  scan,
-  shareReplay,
-  startWith,
-  switchMap,
-  take,
-} from 'rxjs/operators';
+import { merge, Observable, Observer } from 'rxjs';
+import { map, shareReplay, startWith } from 'rxjs/operators';
+import { autoAdvance } from './auto-advance.operator';
 
 export const CAROUSEL_STATES = ['first', 'second', 'third'] as const;
 
 export type CarouselState = typeof CAROUSEL_STATES[number];
 
-export interface ActiveCarouselItemParams {
-  firstButtonClicks: Observable<void>;
-  secondButtonClicks: Observable<void>;
-  thirdButtonClicks: Observable<void>;
-  initialState: CarouselState;
-}
-
-export function activeCarouselState({
-  firstButtonClicks,
-  secondButtonClicks,
-  thirdButtonClicks,
-  initialState,
-}: ActiveCarouselItemParams): Observable<CarouselState> {
-  return merge(
-    firstButtonClicks.pipe(map(() => 'first' as const)),
-    secondButtonClicks.pipe(map(() => 'second' as const)),
-    thirdButtonClicks.pipe(map(() => 'third' as const))
-  ).pipe(startWith(initialState), autoAdvance(5000), shareReplay(1));
+export interface ReactiveCarouselMachine {
+  activeState$: Observable<CarouselState>;
+  userInitiatedStateChange: (carouselState: CarouselState) => void;
 }
 
 export function createReactiveCarouselMachine(
+  timeToAutoAdvance: number = 5000,
   initialState: CarouselState = 'first'
-): {
-  observers: Record<CarouselState, Observer<void>>;
-  params: ActiveCarouselItemParams;
-} {
+): ReactiveCarouselMachine {
   const observers: Record<CarouselState, Observer<void>> = {
     first: null,
     second: null,
     third: null,
   };
-  const params: ActiveCarouselItemParams = {
-    firstButtonClicks: new Observable<void>(
-      (observer) => (observers.first = observer)
-    ),
-    secondButtonClicks: new Observable(
-      (observer) => (observers.second = observer)
-    ),
-    thirdButtonClicks: new Observable(
-      (observer) => (observers.third = observer)
-    ),
+  const userInitiatedActions = CAROUSEL_STATES.reduce((acc, carouselState) => {
+    acc[carouselState] = new Observable<void>((observer) => {
+      observers[carouselState] = observer;
+    });
+    return acc;
+  }, {} as Record<CarouselState, Observable<void>>);
+  const activeState$ = activeCarouselState({
+    userInitiatedActions,
     initialState,
+    timeToAutoAdvance,
+  });
+  const userInitiatedStateChange = (carouselState: CarouselState) => {
+    observers[carouselState].next();
   };
-  return { observers, params };
+  return {
+    userInitiatedStateChange,
+    activeState$,
+  };
+}
+
+interface ActiveCarouselItemParams {
+  userInitiatedActions: Record<CarouselState, Observable<void>>;
+  initialState: CarouselState;
+  timeToAutoAdvance: number;
+}
+
+function activeCarouselState({
+  userInitiatedActions,
+  initialState,
+  timeToAutoAdvance,
+}: ActiveCarouselItemParams): Observable<CarouselState> {
+  return merge(
+    ...Object.entries(
+      userInitiatedActions
+    ).map(
+      ([carouselState, userInitiatedObservable]: [
+        CarouselState,
+        Observable<void>
+      ]) => userInitiatedObservable.pipe(map(() => carouselState))
+    )
+  ).pipe(
+    startWith(initialState),
+    autoAdvance(timeToAutoAdvance, nextState),
+    shareReplay(1)
+  );
 }
 
 function nextState(state: CarouselState): CarouselState {
@@ -67,19 +75,4 @@ function nextState(state: CarouselState): CarouselState {
     return 'third';
   }
   return 'first';
-}
-
-function autoAdvance(period: number) {
-  return function (
-    incoming: Observable<CarouselState>
-  ): Observable<CarouselState> {
-    return incoming.pipe(
-      switchMap((currentState) =>
-        merge(
-          of(currentState),
-          interval(period).pipe(scan((acc) => nextState(acc), currentState))
-        )
-      )
-    );
-  };
 }
