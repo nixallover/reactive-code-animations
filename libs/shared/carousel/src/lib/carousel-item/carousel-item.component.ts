@@ -12,7 +12,7 @@ import { CarouselState } from '../carousel/carousel.utils';
       transition(':enter', [
         useAnimation(dropInAnimation, {
           params: {
-            startPos: '-20px, -20px',
+            startPos: '-50px, -50px',
             time: '500ms 600ms ease-out',
           },
         }),
@@ -23,7 +23,7 @@ import { CarouselState } from '../carousel/carousel.utils';
       transition(':enter', [
         useAnimation(dropInAnimation, {
           params: {
-            startPos: '20px, 20px',
+            startPos: '50px, 50px',
             time: '500ms 800ms ease-out',
           },
         }),
@@ -34,7 +34,7 @@ import { CarouselState } from '../carousel/carousel.utils';
       transition(':enter', [
         useAnimation(dropInAnimation, {
           params: {
-            startPos: '20px, -20px',
+            startPos: '50px, -50px',
             time: '500ms 1000ms ease-out',
           },
         }),
