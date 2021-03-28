@@ -1,6 +1,6 @@
 <rca-carousel #carousel>
   <ng-container *ngIf="carousel.activeState$ | async as activeState">
-    <rca-carousel-item state="first" [activeState]="activeState">
+    <rca-carousel-item state="spongebob" [activeState]="activeState">
       <img
         src="assets/spongebob/spongebob-01.png"
         data-image="1"
@@ -17,7 +17,7 @@
         class="size-md m-sm"
       />
     </rca-carousel-item>
-    <rca-carousel-item state="second" [activeState]="activeState">
+    <rca-carousel-item state="patrick" [activeState]="activeState">
       <img
         src="assets/spongebob/patrick-03.png"
         data-image="1"
@@ -34,7 +34,7 @@
         class="size-xl"
       />
     </rca-carousel-item>
-    <rca-carousel-item state="third" [activeState]="activeState">
+    <rca-carousel-item state="gary" [activeState]="activeState">
       <img
         src="assets/spongebob/gary-01.png"
         data-image="1"
