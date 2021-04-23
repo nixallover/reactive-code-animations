@@ -1,4 +1,5 @@
 # Reactive Code + Animations Examples
+
 Examples from "Best Friends Forever: Reactive Code + Animations" at [ng-conf 2021](https://www.2021.ng-conf.org/).
 
 This project was generated using [Nx](https://nx.dev).
@@ -15,8 +16,8 @@ This project was generated using [Nx](https://nx.dev).
 
 Visit [Nx Cloud](https://nx.app/) to learn more.
 
-
 ## Quick Start
+
 To start the application, run `npm start` and visit http://localhost:4792/ in your browser.
 
 ## Tooling
@@ -24,8 +25,6 @@ To start the application, run `npm start` and visit http://localhost:4792/ in yo
 - [Nx](https://nx.dev/)
 - [Nx Cloud](https://nx.app/)
 - [Angular](https://angular.io/)
-- [Jest](https://jestjs.io/en/)
-- [Cypress](https://www.cypress.io/)
 - [ESLint](https://eslint.org/)
 - [CircleCI](https://circleci.com/)
 
