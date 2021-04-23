@@ -14,6 +14,5 @@ export class AppComponent {
     { name: 'Click Counter', path: '/examples/click-counter' },
     { name: 'Series', path: '/examples/series' },
     { name: 'Carousel', path: '/examples/carousel' },
-    // { name: 'Nx Cloud Illustration', path: '/examples/nx-cloud-illustration' },
   ];
 }

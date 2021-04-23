@@ -162,31 +162,6 @@
       "sourceRoot": "libs/styles/src",
       "architect": {}
     },
-    "examples-nx-cloud-illustration": {
-      "projectType": "library",
-      "root": "libs/examples/nx-cloud-illustration",
-      "sourceRoot": "libs/examples/nx-cloud-illustration/src",
-      "prefix": "rca",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/examples/nx-cloud-illustration/src/**/*.ts",
-              "libs/examples/nx-cloud-illustration/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/examples/nx-cloud-illustration"],
-          "options": {
-            "jestConfig": "libs/examples/nx-cloud-illustration/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "shared-animations": {
       "projectType": "library",
       "root": "libs/shared/animations",
