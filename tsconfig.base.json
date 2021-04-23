@@ -16,9 +16,6 @@
     "baseUrl": ".",
     "paths": {
       "@rca/styles": ["libs/styles/src/index.ts"],
-      "@rca/examples/nx-cloud-illustration": [
-        "libs/examples/nx-cloud-illustration/src/index.ts"
-      ],
       "@rca/shared/animations": ["libs/shared/animations/src/index.ts"],
       "@rca/examples/carousel": ["libs/examples/carousel/src/index.ts"],
       "@rca/shared/carousel": ["libs/shared/carousel/src/index.ts"],

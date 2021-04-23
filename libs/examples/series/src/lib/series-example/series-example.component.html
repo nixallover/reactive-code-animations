@@ -12,5 +12,7 @@
       <div *ngFor="let dot of [1, 2, 3]" class="loading-dot"></div>
     </ng-container>
   </div>
-  <button (click)="loadMore()" type="button" class="button">Load more</button>
+  <button *ngIf="!complete" (click)="loadMore()" type="button" class="button">
+    Load more
+  </button>
 </div>

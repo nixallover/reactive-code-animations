@@ -8,13 +8,6 @@ import { AppComponent } from './app.component';
 
 const APP_ROUTES = [
   {
-    path: 'examples/nx-cloud-illustration',
-    loadChildren: () =>
-      import(
-        'libs/examples/nx-cloud-illustration/src/lib/examples-nx-cloud-illustration.module'
-      ).then((m) => m.ExamplesNxCloudIllustrationModule),
-  },
-  {
     path: 'examples/carousel',
     loadChildren: () =>
       import('libs/examples/carousel/src/lib/examples-carousel.module').then(

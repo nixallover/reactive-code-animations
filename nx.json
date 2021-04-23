@@ -14,7 +14,7 @@
       "runner": "@nrwl/nx-cloud",
       "options": {
         "cacheableOperations": ["build", "lint", "test", "e2e"],
-        "accessToken": "YTkzZWIzNjMtNzI0ZC00ZjgxLWIxYTctNGVlZTI4Zjc2MGExfHJlYWQtd3JpdGU=",
+        "accessToken": "MDQ1NjRmOGYtZjdiYi00NTBlLWE0NTgtMTUxZGU0NzAwZTM2fHJlYWQ=",
         "canTrackAnalytics": false,
         "showUsageWarnings": true
       }
@@ -27,7 +27,6 @@
       "implicitDependencies": ["reactive-code-animations"]
     },
     "styles": { "tags": ["type:ui"] },
-    "examples-nx-cloud-illustration": { "tags": ["type:feature"] },
     "shared-animations": { "tags": ["type:util"] },
     "examples-carousel": { "tags": ["type:feature"] },
     "shared-carousel": { "tags": ["type:ui"] },
