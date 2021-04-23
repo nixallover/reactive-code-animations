@@ -37,6 +37,7 @@ import { BehaviorSubject, timer } from 'rxjs';
 export class SeriesExampleComponent {
   items = ['a', 'b', 'c', 'd'];
   items$ = new BehaviorSubject<Array<string | number>>(this.items);
+  complete = false;
   isLoading = false;
 
   trackByFn(index, item) {
@@ -45,9 +46,10 @@ export class SeriesExampleComponent {
 
   loadMore() {
     this.isLoading = true;
-    timer(3000).subscribe((x) => {
+    timer(3000).subscribe((_) => {
       this.items$.next([...this.items, 'e', 'f', 'g', 'h', 'j', 'k', 'l', 'm']);
       this.isLoading = false;
+      this.complete = true;
     });
   }
 }
